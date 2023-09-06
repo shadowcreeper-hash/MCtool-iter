@@ -11,9 +11,9 @@ from .props import icones
 
 
 bl_info = {
-    "name": "Minecraft Animator tool",
+    "name": "Minecraft cg tool:iter",
     "description": "this is the tool can help your minecraft animation make",
-    "author": "Ethevat 埃特 (shadow creeper)",
+    "author": "iter 埃特 (shadow creeper)",
     "version": (0, 0, 8),
     "blender": (3, 1, 0),
     "location": "View3D",

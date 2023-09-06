@@ -10,8 +10,7 @@ class MC_Tool_MapOptimiz_Ops(bpy.types.Operator):
     bl_options = {"REGISTER"}
 
     def execute(self, context):
-        MC_Tool_Fun.MapOptimize(
-            context, context.scene.mc_tool_mapOptimiz_prop.is_weld)
+        MC_Tool_Fun.MapOptimize(context, context.scene.mc_tool_mapOptimiz_prop.is_weld)
         return {"FINISHED"}
 
 
@@ -23,10 +22,14 @@ class MC_Tool_ModelFXBake_Ops(bpy.types.Operator):
 
     def execute(self, context):
         mc_tool_modelbake_prop = bpy.context.scene.mc_tool_modelbake_prop
-        MC_Tool_Fun.ModelBake(context,
-                              startframe=mc_tool_modelbake_prop.frame_start,
-                              endframe=mc_tool_modelbake_prop.frame_end,
-                              x_resolution=mc_tool_modelbake_prop.bake_x_resolution,
-                              y_resolution=mc_tool_modelbake_prop.bake_y_resolution)
-        bpy.ops.outliner.orphans_purge(do_local_ids=True, do_linked_ids=True, do_recursive=True)
+        MC_Tool_Fun.ModelBake(
+            context,
+            startframe=mc_tool_modelbake_prop.frame_start,
+            endframe=mc_tool_modelbake_prop.frame_end,
+            x_resolution=mc_tool_modelbake_prop.bake_x_resolution,
+            y_resolution=mc_tool_modelbake_prop.bake_y_resolution,
+        )
+        bpy.ops.outliner.orphans_purge(
+            do_local_ids=True, do_linked_ids=True, do_recursive=True
+        )
         return {"FINISHED"}
